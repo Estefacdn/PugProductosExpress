@@ -1,0 +1,27 @@
+html
+    head 
+        title= 'Primero de Pug'
+        link(rel="stylesheet", href="/styles/style.css")
+    body(align='center')
+        div 
+            h1= 'Suchicharron'
+            p Bienvenidos a su restaurante Suchicharron, disfrute de esta experciencia diferente
+            h2 Platos Estrellas 
+            img(src="/images/chicharron1.jpg", width='500' height='300')
+        div(align='center')
+            table(border='1')
+                thead 
+                    th Producto
+                    th Nombre
+                    th Descripcion
+                    th Precio
+                    th Descuento
+                tbody
+                    for prod in products
+                        tr(align='center')
+                            td 
+                                img(src=`/images/${prod.imagen}`, width='150')
+                            td= prod.name
+                            td= prod.description 
+                            td= new Intl.NumberFormat('es-CO').format(prod.price)
+                            td(style='color:green')=new Intl.NumberFormat('es-CO').format(prod.price > 20000 ? 25000:0)
