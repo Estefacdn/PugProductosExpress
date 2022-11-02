@@ -24,4 +24,4 @@ html
                             td= prod.name
                             td= prod.description 
                             td= new Intl.NumberFormat('es-CO').format(prod.price)
-                            td(style='color:green')=new Intl.NumberFormat('es-CO').format(prod.price > 20000 ? 25000:0)
+                            td(style='color:green')=new Intl.NumberFormat('es-CO').format(prod.price > 20000 ? prod.price * 10/100:0)
